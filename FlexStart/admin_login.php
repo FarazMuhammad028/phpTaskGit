@@ -9,7 +9,6 @@ if (isset($_SESSION['InputEmail'])) {
     $error_email = '';
     $error_password = '';
     if (isset($_POST['submit'])) {
-        echo $EmailSession;
 
         $InputEmail = mysqli_real_escape_string($mysqli, $_POST['InputEmail']);
         $InputPassword = mysqli_real_escape_string($mysqli, $_POST['InputPassword']);
@@ -34,9 +33,7 @@ if (isset($_SESSION['InputEmail'])) {
             $_SESSION['InputEmail'] = $InputEmail;
         }
         if (isset($_SESSION['InputEmail'])) {
-
-
-            header("Location: admin_dashboard.php");
+            header("Location:admin_dashboard.php?msg=<div class='alert alert-success mt-lg-4'>Logged In Successfully</div>");
         } else {
             header("Location: admin_login.php");
         }
@@ -121,6 +118,7 @@ if (isset($_SESSION['InputEmail'])) {
     </header><!-- End Header -->
     <section>
         <div class="container">
+
             <h1 class="text-center mt-lg-4">Admin Login</h1>
             <form action="" method="POST">
                 <div class="form-group">
