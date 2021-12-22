@@ -29,6 +29,9 @@ if (isset($_POST['submit'])) {
 
     if (mysqli_query($mysqli, "INSERT INTO `messages`(`Id`, `Name`, `Email`, `Messages`) 
         VALUES(0,'" . $InputName . "', '" . $InputEmail . "', '" . $InputMessage . "')")) {
+
+?>
+<?php
         header("location: contactus.php");
         exit();
     } else {
@@ -64,6 +67,9 @@ if (isset($_POST['submit'])) {
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -115,7 +121,9 @@ if (isset($_POST['submit'])) {
     </header><!-- End Header -->
     <section>
         <div class="container">
+
             <h1 class="text-center mt-lg-4">Contact Us</h1>
+
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="InputEmail">Email</label>

@@ -83,7 +83,11 @@ if (isset($_SESSION['InputEmail'])) {
     </header><!-- End Header -->
 
     <section>
+
         <div class="container">
+            <?php if (isset($_GET['msg'])) {
+                    echo $_GET['msg'];
+                } ?>
             <h1 class="text-center mt-lg-4 ">Messages</h1>
             <table class="table">
                 <thead class="thead-dark">
